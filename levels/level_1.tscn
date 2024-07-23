@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://dooym0m6wmo5b"]
+
+[ext_resource type="Texture2D" uid="uid://d3cdu6rhv6lcf" path="res://assets/marble.png" id="1_tqte0"]
+[ext_resource type="PackedScene" uid="uid://b6nvxutng2qx5" path="res://player.tscn" id="2_t3bdi"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7ouhf"]
+texture = ExtResource("1_tqte0")
+margins = Vector2i(4, 1)
+separation = Vector2i(0, 1)
+texture_region_size = Vector2i(14, 14)
+0:4/0 = 0
+0:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:4/0/physics_layer_0/angular_velocity = 0.0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7, -7, 7, -7, 7, 7, -7, 7)
+
+[sub_resource type="TileSet" id="TileSet_2as2m"]
+tile_size = Vector2i(14, 14)
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_7ouhf")
+
+[node name="Level1" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2(5.96, 5.96)
+tile_set = SubResource("TileSet_2as2m")
+format = 2
+layer_0/tile_data = PackedInt32Array(262144, 1, 4, 262145, 1, 4, 262146, 1, 4, 262147, 1, 4, 262148, 1, 4, 262149, 1, 4, 262150, 1, 4, 196614, 1, 4, 131078, 1, 4, 196608, 1, 4, 131072, 1, 4)
+
+[node name="Player" parent="." instance=ExtResource("2_t3bdi")]
+position = Vector2(248, 240)

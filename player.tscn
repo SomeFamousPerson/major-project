@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://b6nvxutng2qx5"]
+[gd_scene load_steps=4 format=3 uid="uid://b6nvxutng2qx5"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_m6rm2"]
+[ext_resource type="Texture2D" uid="uid://06a56kiwod1b" path="res://assets/red_circle.png" id="2_61pt4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hjdqw"]
 
@@ -11,3 +12,6 @@ script = ExtResource("1_m6rm2")
 shape = SubResource("RectangleShape2D_hjdqw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_61pt4")
+
+[node name="Camera2D" type="Camera2D" parent="."]
