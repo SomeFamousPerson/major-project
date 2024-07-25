@@ -1,3 +1,18 @@
-[gd_scene format=3 uid="uid://dn1xgcmqv7kk3"]
+[gd_scene load_steps=4 format=3 uid="uid://dn1xgcmqv7kk3"]
 
-[node name="tile_swapper" type="Node2D"]
+[ext_resource type="Script" path="res://tile_swapper.gd" id="1_d2yi8"]
+[ext_resource type="Texture2D" uid="uid://chuweht6exwt5" path="res://assets/tileswapper.png" id="2_loe5d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_scgfj"]
+size = Vector2(24, 16)
+
+[node name="tile_swapper" type="RigidBody2D"]
+script = ExtResource("1_d2yi8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(20, 20)
+texture = ExtResource("2_loe5d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_scgfj")

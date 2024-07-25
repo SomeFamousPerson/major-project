@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://buh3iibs48uui"]
+
+[ext_resource type="Texture2D" uid="uid://d3cdu6rhv6lcf" path="res://assets/marble.png" id="1_4d6j2"]
+[ext_resource type="PackedScene" uid="uid://yw1d3y0gt707" path="res://flag.tscn" id="2_1q6wt"]
+[ext_resource type="PackedScene" uid="uid://b6nvxutng2qx5" path="res://player.tscn" id="3_egdub"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7ouhf"]
+texture = ExtResource("1_4d6j2")
+margins = Vector2i(4, 1)
+separation = Vector2i(0, 1)
+texture_region_size = Vector2i(14, 14)
+0:4/0 = 0
+0:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:4/0/physics_layer_0/angular_velocity = 0.0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7, -7, 7, -7, 7, 7, -7, 7)
+
+[sub_resource type="TileSet" id="TileSet_2as2m"]
+tile_size = Vector2i(14, 14)
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_7ouhf")
+
+[node name="Level1" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2(5.96, 5.96)
+tile_set = SubResource("TileSet_2as2m")
+format = 2
+layer_0/tile_data = PackedInt32Array(262146, 1, 4, 262147, 1, 4, 262148, 1, 4, 262149, 1, 4, 262150, 1, 4, 196614, 1, 4, 131078, 1, 4, 65542, 1, 4, 65541, 1, 4, 65540, 1, 4, 65539, 1, 4, 65538, 1, 4, 262144, 1, 4, 262142, 1, 4, 131069, 1, 4)
+
+[node name="Flag" parent="." instance=ExtResource("2_1q6wt")]
+
+[node name="Player" parent="." instance=ExtResource("3_egdub")]
+position = Vector2(248, 240)
+scale = Vector2(0.399999, 0.399999)
