@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://dooym0m6wmo5b"]
+[gd_scene load_steps=7 format=3 uid="uid://dooym0m6wmo5b"]
 
+[ext_resource type="Script" path="res://levels/world.gd" id="1_ffec1"]
 [ext_resource type="Texture2D" uid="uid://d3cdu6rhv6lcf" path="res://assets/marble.png" id="1_tqte0"]
 [ext_resource type="PackedScene" uid="uid://b6nvxutng2qx5" path="res://player.tscn" id="2_t3bdi"]
 [ext_resource type="PackedScene" uid="uid://dn1xgcmqv7kk3" path="res://tile_swapper.tscn" id="3_grvun"]
@@ -20,6 +21,7 @@ physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_7ouhf")
 
 [node name="Level1" type="Node2D"]
+script = ExtResource("1_ffec1")
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2(5.96, 5.96)
@@ -27,10 +29,11 @@ tile_set = SubResource("TileSet_2as2m")
 format = 2
 layer_0/tile_data = PackedInt32Array(262144, 1, 4, 262145, 1, 4, 262146, 1, 4, 262147, 1, 4, 262148, 1, 4, 262149, 1, 4, 262150, 1, 4, 196614, 1, 4, 196608, 1, 4, 131072, 1, 4)
 
+[node name="tile_swapper" parent="." instance=ExtResource("3_grvun")]
+position = Vector2(144, 293)
+scale = Vector2(5, 5)
+script = null
+
 [node name="Player" parent="." instance=ExtResource("2_t3bdi")]
 position = Vector2(248, 240)
 scale = Vector2(0.399999, 0.399999)
-
-[node name="tile_swapper" parent="." instance=ExtResource("3_grvun")]
-position = Vector2(62, 41)
-scale = Vector2(5.2, 5.2)
