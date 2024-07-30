@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://buh3iibs48uui"]
+[gd_scene load_steps=7 format=3 uid="uid://buh3iibs48uui"]
 
 [ext_resource type="Texture2D" uid="uid://d3cdu6rhv6lcf" path="res://assets/marble.png" id="1_4d6j2"]
+[ext_resource type="Script" path="res://levels/world.gd" id="1_s18xh"]
 [ext_resource type="PackedScene" uid="uid://yw1d3y0gt707" path="res://flag.tscn" id="2_1q6wt"]
 [ext_resource type="PackedScene" uid="uid://b6nvxutng2qx5" path="res://player.tscn" id="3_egdub"]
 
@@ -20,6 +21,7 @@ physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_7ouhf")
 
 [node name="Level1" type="Node2D"]
+script = ExtResource("1_s18xh")
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2(5.96, 5.96)

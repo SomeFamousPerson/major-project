@@ -32,7 +32,6 @@ layer_0/tile_data = PackedInt32Array(262144, 1, 4, 262145, 1, 4, 262146, 1, 4, 2
 
 [node name="tile_swapper" parent="." instance=ExtResource("3_grvun")]
 position = Vector2(144, 293)
-scale = Vector2(5, 5)
 script = null
 
 [node name="Player" parent="." instance=ExtResource("2_t3bdi")]
