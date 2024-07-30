@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dooym0m6wmo5b"]
+[gd_scene load_steps=8 format=3 uid="uid://dooym0m6wmo5b"]
 
 [ext_resource type="Script" path="res://levels/world.gd" id="1_ffec1"]
 [ext_resource type="Texture2D" uid="uid://d3cdu6rhv6lcf" path="res://assets/marble.png" id="1_tqte0"]
 [ext_resource type="PackedScene" uid="uid://b6nvxutng2qx5" path="res://player.tscn" id="2_t3bdi"]
 [ext_resource type="PackedScene" uid="uid://dn1xgcmqv7kk3" path="res://tile_swapper.tscn" id="3_grvun"]
+[ext_resource type="PackedScene" uid="uid://yw1d3y0gt707" path="res://flag.tscn" id="5_5s5ny"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7ouhf"]
 texture = ExtResource("1_tqte0")
@@ -37,3 +38,6 @@ script = null
 [node name="Player" parent="." instance=ExtResource("2_t3bdi")]
 position = Vector2(248, 240)
 scale = Vector2(0.399999, 0.399999)
+
+[node name="Flag" parent="." instance=ExtResource("5_5s5ny")]
+position = Vector2(23, 73)
