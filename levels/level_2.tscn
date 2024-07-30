@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://buh3iibs48uui"]
+[gd_scene load_steps=7 format=3 uid="uid://caegrgokpv87x"]
 
 [ext_resource type="Texture2D" uid="uid://d3cdu6rhv6lcf" path="res://assets/marble.png" id="1_4d6j2"]
 [ext_resource type="Script" path="res://levels/world.gd" id="1_s18xh"]

@@ -24,14 +24,14 @@ sources/1 = SubResource("TileSetAtlasSource_7ouhf")
 script = ExtResource("1_ffec1")
 
 [node name="TileMap" type="TileMap" parent="."]
-scale = Vector2(5.96, 5.96)
+scale = Vector2(6, 6)
 tile_set = SubResource("TileSet_2as2m")
 format = 2
-layer_0/tile_data = PackedInt32Array(262144, 1, 4, 262145, 1, 4, 262146, 1, 4, 262147, 1, 4, 262148, 1, 4, 262149, 1, 4, 262150, 1, 4, 196614, 1, 4, 196608, 1, 4, 131072, 1, 4)
+layer_0/tile_data = PackedInt32Array(262144, 1, 4, 262145, 1, 4, 262146, 1, 4, 262147, 1, 4, 262148, 1, 4, 262149, 1, 4, 262150, 1, 4, 196614, 1, 4, 196608, 1, 4, 131072, 1, 4, 0, 1, 4)
 
 [node name="Player" parent="." instance=ExtResource("2_t3bdi")]
-position = Vector2(248, 240)
+position = Vector2(306, 157)
 scale = Vector2(0.399999, 0.399999)
 
 [node name="Flag" parent="." instance=ExtResource("5_5s5ny")]
-position = Vector2(23, 73)
+position = Vector2(-174, -18)
