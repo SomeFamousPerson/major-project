@@ -12,7 +12,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("click"):
 		var cell = Vector2i(mouse)/tilemap.tile_set.tile_size#/Vector2i(tilemap.scale)
 		print("cell position: ",cell)
-		var world_pos = tilemap.map_to_local(cell)
+		var world_pos = Vector2i(tilemap.map_to_local(cell))
 		print("world position: ",world_pos)
 		#print ("atlas position: ", tilemap.get_cell_atlas_coords(0, cell))
 		atlas = Vector2i(tilemap.get_cell_atlas_coords(0, cell))
@@ -20,8 +20,8 @@ func _physics_process(delta):
 			print("valid spot")
 			var swapper = tileswapper.instantiate()
 			add_child(swapper)
-			swapper.top_level = true
-			swapper.position = world_pos
-			print("placed location: ", swapper.position)
+			#swapper.top_level = true
+			swapper.global_position = world_pos
+			print("placed location: ", swapper.global_position)
 
 
