@@ -1,6 +1,18 @@
 extends Node2D
 const RANGE = 3
-var tilemap = TileMap
+var myLocation = Vector2(0,0) 
+var tilemap
+
+func _ready():
+	print(tilemap)
+	var targets = [Vector2i(myLocation+Vector2i(1,0)),Vector2i(myLocation+Vector2i(2,0)),Vector2i(myLocation+Vector2i(3,0))]
+	print(targets)
+	if tilemap.get_cell_atlas_coords(0,targets[1]) != Vector2i(0,4):
+		##TODO: MAKE THE SET_CELL WORK
+		tilemap.set_cell(0,targets[1],0)
+	pass
+
+
 
 #func _physics_process(delta):
 	#print(tilemap)
