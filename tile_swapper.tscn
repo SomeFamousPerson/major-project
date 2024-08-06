@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://dn1xgcmqv7kk3"]
+[gd_scene load_steps=5 format=3 uid="uid://dn1xgcmqv7kk3"]
 
 [ext_resource type="Script" path="res://tile_swapper.gd" id="1_d2yi8"]
 [ext_resource type="Texture2D" uid="uid://chuweht6exwt5" path="res://assets/tileswapper.png" id="2_loe5d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_scgfj"]
-size = Vector2(24, 16)
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s5lwn"]
+size = Vector2(16, 16)
 
 [node name="tile_swapper" type="StaticBody2D"]
 script = ExtResource("1_d2yi8")
@@ -14,3 +17,11 @@ texture = ExtResource("2_loe5d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_scgfj")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_s5lwn")
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
