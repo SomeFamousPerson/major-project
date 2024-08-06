@@ -3,8 +3,8 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 var gravity = 400
-
-
+var direction
+var last_direction = 1
 
 
 
@@ -17,8 +17,10 @@ func _physics_process(delta):
 		velocity.y = JUMP_VELOCITY
 
 
-	var direction = Input.get_axis("left", "right")
-	if direction:
+	direction = Input.get_axis("left", "right")
+	if last_direction != direction and direction:
+		last_direction = direction
+	if direction: 
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)

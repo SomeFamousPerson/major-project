@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cpvf2ymq4jkav"]
+[gd_scene load_steps=7 format=3 uid="uid://brtly3mqvq2vt"]
 
 [ext_resource type="Texture2D" uid="uid://d3cdu6rhv6lcf" path="res://assets/marble.png" id="1_4d6j2"]
 [ext_resource type="Script" path="res://levels/world.gd" id="1_s18xh"]
@@ -27,14 +27,18 @@ sources/1 = SubResource("TileSetAtlasSource_7ouhf")
 script = ExtResource("1_s18xh")
 
 [node name="TileMap" type="TileMap" parent="."]
+unique_name_in_owner = true
 scale = Vector2(6, 6)
 tile_set = SubResource("TileSet_2as2m")
 format = 2
-layer_0/tile_data = PackedInt32Array(262148, 1, 4, 262149, 1, 4, 262150, 1, 4, 196614, 1, 4, 262147, 1, 4, 196625, 1, 4)
+layer_0/name = "world"
+layer_0/tile_data = PackedInt32Array(4, 1, 4, 3, 1, 4, 2, 1, 4, 65538, 1, 4, 131074, 1, 4, 196610, 1, 4, 196611, 1, 4, 196612, 1, 4, 196613, 1, 4, -65532, 1, 4, -131068, 1, 4, -196604, 1, 4, -262140, 1, 4, -327676, 1, 4, 131081, 1, 4, 65549, 1, 4, 17, 1, 4, 18, 1, 4, -327669, 1, 4, -327673, 1, 4, 196609, 1, 4, 196608, 1, 4, 262143, 1, 4, 262142, 1, 4, 262141, 1, 4, 262140, 1, 4, 262139, 1, 4, -196584, 1, 4, -196583, 1, 4, -262128, 1, 4, -262129, 1, 4)
+layer_1/name = "original world"
+layer_1/tile_data = PackedInt32Array(262139, 1, 4, 262140, 1, 4, 262141, 1, 4, 262142, 1, 4, 262143, 1, 4, 196608, 1, 4, 196609, 1, 4, 196610, 1, 4, 196611, 1, 4, 196612, 1, 4, 196613, 1, 4, -327676, 1, 4, -262140, 1, 4, -196604, 1, 4, -131068, 1, 4, -65532, 1, 4, 4, 1, 4, 3, 1, 4, 2, 1, 4, 65538, 1, 4, 131074, 1, 4, 131081, 1, 4, 65549, 1, 4, 17, 1, 4, 18, 1, 4, -196584, 1, 4, -196583, 1, 4, -262128, 1, 4, -262129, 1, 4, -327669, 1, 4, -327673, 1, 4)
 
 [node name="Player" parent="." instance=ExtResource("3_egdub")]
 position = Vector2(306, 157)
 scale = Vector2(0.399999, 0.399999)
 
 [node name="Flag" parent="." instance=ExtResource("2_1q6wt")]
-position = Vector2(1639, 186)
+position = Vector2(-174, -18)

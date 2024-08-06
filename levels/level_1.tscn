@@ -31,7 +31,10 @@ unique_name_in_owner = true
 scale = Vector2(6, 6)
 tile_set = SubResource("TileSet_2as2m")
 format = 2
+layer_0/name = "world"
 layer_0/tile_data = PackedInt32Array(262144, 1, 4, 262145, 1, 4, 262146, 1, 4, 262147, 1, 4, 262148, 1, 4, 262149, 1, 4, 262150, 1, 4, 196614, 1, 4, 196608, 1, 4, 131072, 1, 4, 0, 1, 4)
+layer_1/name = "original world"
+layer_1/tile_data = PackedInt32Array(0, 1, 4, 131072, 1, 4, 196608, 1, 4, 262144, 1, 4, 262145, 1, 4, 262146, 1, 4, 262147, 1, 4, 262148, 1, 4, 262149, 1, 4, 262150, 1, 4, 196614, 1, 4)
 
 [node name="Player" parent="." instance=ExtResource("2_t3bdi")]
 position = Vector2(306, 157)
