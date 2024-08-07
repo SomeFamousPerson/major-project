@@ -30,8 +30,8 @@ func _physics_process(delta):
 			swapper.top_level = true
 			swapper.global_position = (world_pos+Vector2(35,39))
 			#sets directionm the swapper faces
-			#if $Player.last_direction == -1:
-				#swapper.rotation = 180
+			if $Player.last_direction == -1:
+				swapper.rotation = PI
 			#confirms that you placed it and uses one up
 			print("placed location: ", swapper.global_position)
 			Global.swappers_remaining -= 1
