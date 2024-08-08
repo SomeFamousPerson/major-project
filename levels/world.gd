@@ -4,7 +4,7 @@ var atlas = Vector2i(0,0)
 var tileswapper = preload("res://tile_swapper.tscn")
 	
 func _ready():
-	Global.swappers_remaining = 1
+	Global.swappers_remaining = 100
 
 func _physics_process(delta):
 	var tilemap = $TileMap
@@ -28,9 +28,9 @@ func _physics_process(delta):
 			#set size and position
 			swapper.scale = Vector2(5.25,5.25)
 			swapper.top_level = true
-			swapper.global_position = (world_pos+Vector2(35,39))
+			swapper.global_position = (world_pos+Vector2(35,35))
 			#sets directionm the swapper faces
-			if $Player.last_direction == -1:
+			if Global.player_last_direction == -1:
 				swapper.rotation = PI
 			#confirms that you placed it and uses one up
 			print("placed location: ", swapper.global_position)

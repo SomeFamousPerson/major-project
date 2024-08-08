@@ -6,7 +6,10 @@ var mouse_in = false
 var targets
 func _ready():
 	print(tilemap)
-	targets = [Vector2i(myLocation+Vector2i(1,0)),Vector2i(myLocation+Vector2i(2,0)),Vector2i(myLocation+Vector2i(3,0))]
+	if Global.player_last_direction == 1:
+		targets = [Vector2i(myLocation+Vector2i(1,0)),Vector2i(myLocation+Vector2i(2,0)),Vector2i(myLocation+Vector2i(3,0))]
+	else:
+		targets = [Vector2i(myLocation+Vector2i(-1,0)),Vector2i(myLocation+Vector2i(-2,0)),Vector2i(myLocation+Vector2i(-3,0))]
 	print(targets)
 	for i in RANGE:
 		if tilemap.get_cell_atlas_coords(0,targets[i]) == Vector2i(-1,-1):
@@ -23,6 +26,8 @@ func _physics_process(delta):
 			if tilemap.get_cell_atlas_coords(0,targets[i]) == Vector2i(0,4) and tilemap.get_cell_atlas_coords(1,targets[i]) != Vector2i(0,4):
 				#make it empty
 				tilemap.set_cell(0,targets[i],1,Vector2i(-1,-1))
+			else:
+				break
 		Global.swappers_remaining += 1
 		queue_free()
 
