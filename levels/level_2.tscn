@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://brtly3mqvq2vt"]
+[gd_scene load_steps=8 format=3 uid="uid://brtly3mqvq2vt"]
 
 [ext_resource type="Texture2D" uid="uid://d3cdu6rhv6lcf" path="res://assets/marble.png" id="1_4d6j2"]
 [ext_resource type="Script" path="res://levels/world.gd" id="1_s18xh"]
 [ext_resource type="PackedScene" uid="uid://yw1d3y0gt707" path="res://flag.tscn" id="2_1q6wt"]
 [ext_resource type="PackedScene" uid="uid://b6nvxutng2qx5" path="res://player.tscn" id="3_egdub"]
+[ext_resource type="PackedScene" uid="uid://bs04mm0fa6edf" path="res://laser_shooter.tscn" id="5_8rv77"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7ouhf"]
 texture = ExtResource("1_4d6j2")
@@ -42,3 +43,6 @@ scale = Vector2(0.399999, 0.399999)
 
 [node name="Flag" parent="." instance=ExtResource("2_1q6wt")]
 position = Vector2(-174, -18)
+
+[node name="laser_shooter" parent="." instance=ExtResource("5_8rv77")]
+position = Vector2(557, 95)

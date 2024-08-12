@@ -37,7 +37,10 @@ func _physics_process(delta):
 			Global.swappers_remaining -= 1
 			#sets a block in the background so that the game knows something is there
 			tilemap.set_cell(0,cell,1,Vector2(8,10))
-	
-	
+	if Input.is_action_just_pressed("pause"):
+		get_tree().paused = true
+		#TODO: MAKE A WAY TO UNPAUISE
+		#ASK TOM MAYBE IDK
+		# OR JUST TRIUAL AND ERROR TF OUT OF IT
 	
 	
