@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://laser_shooter.gd" id="1_gl4fh"]
 [ext_resource type="Texture2D" uid="uid://b42d1heepb57x" path="res://assets/laser_shooter.png" id="2_b6n7l"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_t3jml"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pbu51"]
 size = Vector2(16, 16)
 
 [node name="laser_shooter" type="StaticBody2D"]
@@ -11,7 +11,7 @@ scale = Vector2(5.25, 5.25)
 script = ExtResource("1_gl4fh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_t3jml")
+shape = SubResource("RectangleShape2D_pbu51")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-4.76837e-07, -4.76837e-07)

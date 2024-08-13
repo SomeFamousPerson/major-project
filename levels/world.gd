@@ -5,7 +5,7 @@ var tileswapper = preload("res://tile_swapper.tscn")
 	
 func _ready():
 	Global.swappers_remaining = 100
-
+	$CanvasLayer.visible = false
 func _physics_process(delta):
 	var tilemap = $TileMap
 	#place tile-swappers
@@ -37,10 +37,17 @@ func _physics_process(delta):
 			Global.swappers_remaining -= 1
 			#sets a block in the background so that the game knows something is there
 			tilemap.set_cell(0,cell,1,Vector2(8,10))
+	#when esc pressed, show pause screen and pause game
 	if Input.is_action_just_pressed("pause"):
+		$CanvasLayer.visible = true
 		get_tree().paused = true
 		#TODO: MAKE A WAY TO UNPAUISE
 		#ASK TOM MAYBE IDK
 		# OR JUST TRIUAL AND ERROR TF OUT OF IT
 	
 	
+
+#unpause game
+func _on_button_pressed():
+	get_tree().paused = false
+	$CanvasLayer.visible = false
