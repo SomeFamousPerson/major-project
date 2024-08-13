@@ -5,8 +5,6 @@ const JUMP_VELOCITY = -300.0
 var gravity = 400
 var direction
 
-
-
 func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta

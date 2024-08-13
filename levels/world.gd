@@ -18,25 +18,30 @@ func _physics_process(delta):
 		var world_pos = Vector2(tilemap.map_to_local(cell*Vector2i(tilemap.scale)))
 		#gets the atlas position of that cell(where on the tileset it is)
 		atlas = Vector2i(tilemap.get_cell_atlas_coords(0, cell))
-		#if that spot is free and you have swappers left, it places one
+		#if that spot is free and you have swappers left and the tile below it is solid, it places one
 		if atlas == Vector2i(-1,-1) and Global.swappers_remaining >= 1: 
-			print("valid spot")
-			var swapper = tileswapper.instantiate()
-			swapper.tilemap = $TileMap
-			swapper.myLocation = cell
-			add_child(swapper)
-			#set size and position
-			swapper.scale = Vector2(5.25,5.25)
-			swapper.top_level = true
-			swapper.global_position = (world_pos+Vector2(35,35))
-			#sets directionm the swapper faces
-			if Global.player_last_direction == -1:
-				swapper.rotation = PI
-			#confirms that you placed it and uses one up
-			print("placed location: ", swapper.global_position)
-			Global.swappers_remaining -= 1
-			#sets a block in the background so that the game knows something is there
-			tilemap.set_cell(0,cell,1,Vector2(8,10))
+			atlas = Vector2i(tilemap.get_cell_atlas_coords(0, cell+Vector2i(0,1)))
+			if atlas != Vector2i(-1,-1):
+				print("valid spot")
+				var swapper = tileswapper.instantiate()
+				swapper.tilemap = $TileMap
+				swapper.myLocation = cell
+				add_child(swapper)
+				#set size and position
+				swapper.scale = Vector2(5.25,5.25)
+				swapper.top_level = true
+				swapper.global_position = (world_pos+Vector2(35,35))
+				#sets directionm the swapper faces
+				if Global.player_last_direction == -1:
+					swapper.rotation = PI
+				#confirms that you placed it and uses one up
+				print("placed location: ", swapper.global_position)
+				Global.swappers_remaining -= 1
+				#sets a block in the background so that the game knows something is there
+				tilemap.set_cell(0,cell,1,Vector2(8,10))
+			else:
+				#%Player/Camera2D.offset = Vector2(10,10)
+				pass
 	#when esc pressed, show pause screen and pause game
 	if Input.is_action_just_pressed("pause"):
 		$CanvasLayer.visible = true
@@ -49,5 +54,10 @@ func _physics_process(delta):
 
 #unpause game
 func _on_button_pressed():
+	get_tree().paused = false
+	$CanvasLayer.visible = false
+
+
+func _on_pause_button_pressed():
 	get_tree().paused = false
 	$CanvasLayer.visible = false
