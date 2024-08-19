@@ -25,4 +25,10 @@ func _physics_process(delta):
 
 	move_and_slide()
 	
+	if Input.is_action_just_pressed("swap type"):
+		if Global.swap_type == 1:
+			Global.swap_type = 2
+		elif Global.swap_type == 2:
+			Global.swap_type = 1
+	
 	

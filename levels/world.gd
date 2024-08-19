@@ -6,6 +6,7 @@ var tileswapper = preload("res://tile_swapper.tscn")
 func _ready():
 	Global.swappers_remaining = 100
 	$CanvasLayer.visible = false
+	$TileMap.set_layer_enabled(1,false)
 func _physics_process(delta):
 	var tilemap = $TileMap
 	#place tile-swappers
@@ -18,10 +19,13 @@ func _physics_process(delta):
 		var world_pos = Vector2(tilemap.map_to_local(cell*Vector2i(tilemap.scale)))
 		#gets the atlas position of that cell(where on the tileset it is)
 		atlas = Vector2i(tilemap.get_cell_atlas_coords(0, cell))
-		#if that spot is free and you have swappers left and the tile below it is solid, it places one
+		#if that spot is free and you have swappers left and a tile next to it is solid, it places one
 		if atlas == Vector2i(-1,-1) and Global.swappers_remaining >= 1: 
-			atlas = Vector2i(tilemap.get_cell_atlas_coords(0, cell+Vector2i(0,1)))
-			if atlas != Vector2i(-1,-1):
+			var atlas_below = Vector2i(tilemap.get_cell_atlas_coords(0, cell+Vector2i(0,1)))
+			var atlas_above = Vector2i(tilemap.get_cell_atlas_coords(0, cell+Vector2i(0,-1)))
+			var atlas_left = Vector2i(tilemap.get_cell_atlas_coords(0, cell+Vector2i(1,0)))
+			var atlas_right = Vector2i(tilemap.get_cell_atlas_coords(0, cell+Vector2i(-1,0)))
+			if atlas_below != Vector2i(-1,-1) or atlas_above != Vector2i(-1,-1) or atlas_left != Vector2i(-1,-1) or atlas_right != Vector2i(-1,-1):
 				print("valid spot")
 				var swapper = tileswapper.instantiate()
 				swapper.tilemap = $TileMap
@@ -46,9 +50,6 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("pause"):
 		$CanvasLayer.visible = true
 		get_tree().paused = true
-		#TODO: MAKE A WAY TO UNPAUISE
-		#ASK TOM MAYBE IDK
-		# OR JUST TRIUAL AND ERROR TF OUT OF IT
 	
 	
 

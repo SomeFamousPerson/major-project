@@ -16,3 +16,6 @@ shape = SubResource("RectangleShape2D_pbu51")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-4.76837e-07, -4.76837e-07)
 texture = ExtResource("2_b6n7l")
+
+[node name="laserbeams" type="Node2D" parent="."]
+position = Vector2(-4.76837e-07, -4.76837e-07)
