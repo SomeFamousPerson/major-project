@@ -5,12 +5,13 @@ var RANGE = 4
 
 
 func _physics_process(delta):
+	
 	#var children = $laserbeams.get_children()
 	##print(children)
 	#for c in children:
 		#print("children: ",c)
-		##$laserbeams.remove_child(c)
-		#$laserbeams.queue_free()
+		#$laserbeams.remove_child(c)
+		#self.queue_free()
 
 	if Global.level == 0:
 		world =  %TileMap
@@ -21,7 +22,8 @@ func _physics_process(delta):
 			if atlas == Vector2i(-1,-1):
 				var new_laser = laser.instantiate()
 				new_laser.position = cell+Vector2i(-1,(i+1)*16)
-				#
+				add_child(new_laser)
+
 				#var new_node2d = Node2D.new()
 				#add_child(new_node2d)
 				#new_node2d.name = "laserbeams"

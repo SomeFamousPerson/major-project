@@ -4,7 +4,8 @@ var myLocation = Vector2(0,0)
 var tilemap
 var mouse_in = false
 var targets
-var swap_type = Global.swap_type
+#wether it swaps air to solid(1) or soliud to air(2)
+var swap_type = 2
 func _ready():
 
 	print(tilemap)
@@ -14,13 +15,13 @@ func _ready():
 		targets = [Vector2i(myLocation+Vector2i(-1,0)),Vector2i(myLocation+Vector2i(-2,0)),Vector2i(myLocation+Vector2i(-3,0))]
 	print(targets)
 	#if it swaps air to solid
-	if swap_type == 1:
+	if Global.swap_type == 1:
 		for i in RANGE:
 			if tilemap.get_cell_atlas_coords(0,targets[i]) == Vector2i(-1,-1):
 				tilemap.set_cell(0,targets[i],1,Vector2i(0,4))
 			else:
 				break
-	elif swap_type == 2:
+	elif Global.swap_type == 2:
 		for i in RANGE:
 			if tilemap.get_cell_atlas_coords(0,targets[i]) != Vector2i(-1,-1):
 				tilemap.set_cell(0,targets[i],1,Vector2i(-1,-1))
@@ -29,7 +30,7 @@ func _ready():
 func _physics_process(delta):
 	if Input.is_action_just_pressed("click") and mouse_in == true:
 		tilemap.set_cell(0,myLocation,1,Vector2i(-1,-1))
-		if swap_type == 1:
+		if Global.swap_type == 1:
 		#reverse of previous similar code, deletes the blocks that got placed by the bridge
 			for i in RANGE:
 				#if block is solid AND was not solid in the original map
@@ -38,7 +39,7 @@ func _physics_process(delta):
 					tilemap.set_cell(0,targets[i],1,Vector2i(-1,-1))
 				else:
 					break
-		elif swap_type == 2:
+		elif Global.swap_type == 2:
 			for i in RANGE:
 				#if block is air and was solid in orignal map
 				if tilemap.get_cell_atlas_coords(0,targets[i]) == Vector2i(-1,-1) and tilemap.get_cell_atlas_coords(1,targets[i]) == Vector2i(0,4):
