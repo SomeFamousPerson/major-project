@@ -1,6 +1,7 @@
-extends Node2D
+extends Control
 
-
+@onready var mainmenu = $"main menu"
+@onready var instructions = $instructions
 
 func _ready():
 	pass
@@ -11,4 +12,10 @@ func _on_button_pressed():
 
 
 func _on_instructions_pressed():
-	pass
+	instructions.visible = true
+	mainmenu.visible = false
+
+
+func _on_back_pressed():
+	instructions.visible = false
+	mainmenu.visible = true	

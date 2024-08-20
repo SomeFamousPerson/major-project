@@ -2,25 +2,112 @@
 
 [ext_resource type="Script" path="res://main.gd" id="1_5qj6x"]
 
-[node name="main" type="Node2D"]
+[node name="main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_5qj6x")
 
-[node name="start" type="Button" parent="."]
-offset_left = 470.0
-offset_top = 249.0
-offset_right = 636.0
-offset_bottom = 361.0
+[node name="main menu" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="start" type="Button" parent="main menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -83.0
+offset_top = -135.0
+offset_right = 83.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 40
 text = "Start"
 
-[node name="instructions" type="Button" parent="."]
-offset_left = 428.0
-offset_top = 438.0
-offset_right = 673.0
-offset_bottom = 503.0
+[node name="instructions button" type="Button" parent="main menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -122.5
+offset_top = 111.5
+offset_right = 122.5
+offset_bottom = 176.5
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_font_sizes/font_size = 41
 text = "Instructions"
 
-[connection signal="pressed" from="start" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="instructions" to="." method="_on_instructions_pressed"]
+[node name="instructions" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="back" type="Button" parent="instructions"]
+layout_mode = 1
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_font_sizes/font_size = 20
+text = "back to menu"
+
+[node name="Label" type="Label" parent="instructions"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -188.0
+offset_right = 20.0
+offset_bottom = -165.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "INSTRUCTIONS:"
+
+[node name="Label2" type="Label" parent="instructions"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -479.0
+offset_top = -108.0
+offset_right = 479.0
+offset_bottom = 249.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Try to make it to the flag at the end of each level
+Move with A and D, with SPACE to jump
+
+Click on an empty square to place a tileswapper there
+This will build a bridge of tiles in front of it
+Click again to remove it
+
+These instructions will be repeated in more depth inside the game"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="main menu/start" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="main menu/instructions button" to="." method="_on_instructions_pressed"]
+[connection signal="pressed" from="instructions/back" to="." method="_on_back_pressed"]

@@ -31,3 +31,4 @@ func _physics_process(delta):
 			Global.swap_type = 2
 		elif Global.swap_type == 2:
 			Global.swap_type =1
+	$Camera2D/Label.text = "idk work it outd"
