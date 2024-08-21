@@ -22,7 +22,7 @@ func _ready():
 				break
 	elif swap_type == 2:
 		for i in RANGE:
-			if tilemap.get_cell_atlas_coords(0,targets[i]) != Vector2i(-1,-1):
+			if tilemap.get_cell_atlas_coords(0,targets[i]) == Vector2i(0,4):
 				tilemap.set_cell(0,targets[i],1,Vector2i(-1,-1))
 		
 		
@@ -45,6 +45,9 @@ func _physics_process(delta):
 					#make it solid
 					tilemap.set_cell(0,targets[i],1,Vector2i(0,4))
 		Global.swappers_remaining += 1
+		#if the original map should have a square where this is, replace it
+		if tilemap.get_cell_atlas_coords(1,myLocation) == Vector2i(0,4):
+			tilemap.set_cell(0,myLocation,1,Vector2i(0,4))
 		queue_free()
 
 
