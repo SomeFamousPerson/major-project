@@ -5,7 +5,7 @@ var tileswapper = preload("res://tile_swapper.tscn")
 	
 func _ready():
 	Global.swappers_remaining = 100
-	$CanvasLayer.visible = false
+	
 	$TileMap.set_layer_enabled(1,false)
 func _physics_process(delta):
 	var tilemap = $TileMap
@@ -46,19 +46,4 @@ func _physics_process(delta):
 			else:
 				#%Player/Camera2D.offset = Vector2(10,10)
 				pass
-	#when esc pressed, show pause screen and pause game
-	if Input.is_action_just_pressed("pause"):
-		$CanvasLayer.visible = true
-		get_tree().paused = true
 	
-	
-
-#unpause game
-func _on_button_pressed():
-	get_tree().paused = false
-	$CanvasLayer.visible = false
-
-
-func _on_pause_button_pressed():
-	get_tree().paused = false
-	$CanvasLayer.visible = false

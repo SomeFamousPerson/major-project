@@ -46,17 +46,3 @@ position = Vector2(-174, -18)
 
 [node name="laser_shooter" parent="." instance=ExtResource("5_8rv77")]
 position = Vector2(557, 95)
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-process_mode = 3
-
-[node name="pause button" type="Button" parent="CanvasLayer"]
-offset_left = 572.0
-offset_top = 283.0
-offset_right = 649.0
-offset_bottom = 314.0
-scale = Vector2(2.6, 2.6)
-text = "Unpause"
-metadata/_edit_use_anchors_ = true
-
-[connection signal="pressed" from="CanvasLayer/pause button" to="." method="_on_pause_button_pressed"]

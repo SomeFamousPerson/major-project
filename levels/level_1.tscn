@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dooym0m6wmo5b"]
+[gd_scene load_steps=8 format=3 uid="uid://dooym0m6wmo5b"]
 
 [ext_resource type="Script" path="res://levels/world.gd" id="1_ffec1"]
 [ext_resource type="Texture2D" uid="uid://d3cdu6rhv6lcf" path="res://assets/marble.png" id="1_tqte0"]
 [ext_resource type="PackedScene" uid="uid://b6nvxutng2qx5" path="res://player.tscn" id="2_t3bdi"]
 [ext_resource type="PackedScene" uid="uid://yw1d3y0gt707" path="res://flag.tscn" id="5_5s5ny"]
+[ext_resource type="PackedScene" uid="uid://bucmbqkxdvbi2" path="res://death.tscn" id="5_gt5wd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7ouhf"]
 texture = ExtResource("1_tqte0")
@@ -89,18 +90,12 @@ position = Vector2(306, 157)
 scale = Vector2(0.399999, 0.399999)
 
 [node name="Flag" parent="." instance=ExtResource("5_5s5ny")]
-position = Vector2(2334, -35)
+position = Vector2(896, 241)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-process_mode = 3
+[node name="death" parent="." instance=ExtResource("5_gt5wd")]
+position = Vector2(1251, 1230)
+scale = Vector2(2.04093, 1.84)
 
-[node name="pause button" type="Button" parent="CanvasLayer"]
-offset_left = 572.0
-offset_top = 283.0
-offset_right = 649.0
-offset_bottom = 314.0
-scale = Vector2(2.6, 2.6)
-text = "Unpause"
-metadata/_edit_use_anchors_ = true
-
-[connection signal="pressed" from="CanvasLayer/pause button" to="." method="_on_button_pressed"]
+[node name="death2" parent="." instance=ExtResource("5_gt5wd")]
+position = Vector2(2376, 1240)
+scale = Vector2(4.3079, 0.668165)

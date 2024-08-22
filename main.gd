@@ -8,7 +8,8 @@ func _ready():
 
 
 func _on_button_pressed():
-	get_tree().change_scene_to_file("res://levels/level_1.tscn")
+	var level :String = "res://levels/level_"+str(Global.level+1)+".tscn"
+	get_tree().change_scene_to_file(level)
 
 
 func _on_instructions_pressed():
