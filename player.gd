@@ -38,7 +38,7 @@ func _physics_process(delta):
 	if Global.swap_type == 1:
 		$Camera2D/CanvasLayer/Label.text = ("Swap type: build")
 	else:
-		$Camera2D/CanvasLayer/Label.text == "Swap type: remove"
+		$Camera2D/CanvasLayer/Label.text = "Swap type: remove"
 	#when esc pressed, show pause screen and pause game
 	if Input.is_action_just_pressed("pause"):
 		$CanvasLayer.visible = true
