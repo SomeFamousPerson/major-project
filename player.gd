@@ -44,7 +44,10 @@ func _physics_process(delta):
 		$CanvasLayer.visible = true
 		get_tree().paused = true
 	
-
+	
+	#remaining tileswappers
+	var remaining :String = "Tileswappers remaining: "+str(Global.swappers_remaining)
+	$Camera2D/CanvasLayer/remaining.text = remaining
 #unpause game
 func _on_pause_button_pressed():
 	get_tree().paused = false

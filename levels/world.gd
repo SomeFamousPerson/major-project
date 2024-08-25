@@ -4,7 +4,7 @@ var atlas = Vector2i(0,0)
 var tileswapper = preload("res://tile_swapper.tscn")
 	
 func _ready():
-	Global.swappers_remaining = 100
+	Global.swappers_remaining = 5
 	
 	$TileMap.set_layer_enabled(1,false)
 func _physics_process(delta):
