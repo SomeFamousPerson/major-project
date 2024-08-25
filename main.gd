@@ -8,7 +8,11 @@ func _ready():
 
 
 func _on_button_pressed():
-	var level :String = "res://levels/level_"+str(Global.level+1)+".tscn"
+	var level# :String = "res://levels/level_"+str(Global.level+1)+".tscn"
+	if Global.level == 0:
+		level = "res://levels/level_1.tscn"
+	elif Global.level == 1:
+		level = "res://levels/level_2.tscn"
 	get_tree().change_scene_to_file(level)
 
 
