@@ -15,12 +15,16 @@ func _ready():
 	print(targets)
 	#if it swaps air to solid
 	if swap_type == 1:
+		$"Tileswapper sprite".visible = true
+		$"reverse tileswapper".visible = false
 		for i in RANGE:
 			if tilemap.get_cell_atlas_coords(0,targets[i]) == Vector2i(-1,-1):
 				tilemap.set_cell(0,targets[i],1,Vector2i(0,4))
 			else:
 				break
 	elif swap_type == 2:
+		$"reverse tileswapper".visible = true
+		$"Tileswapper sprite".visible = false
 		for i in RANGE:
 			if tilemap.get_cell_atlas_coords(0,targets[i]) == Vector2i(0,4):
 				tilemap.set_cell(0,targets[i],1,Vector2i(-1,-1))

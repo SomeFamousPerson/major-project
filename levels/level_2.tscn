@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://levels/world.gd" id="1_s18xh"]
 [ext_resource type="PackedScene" uid="uid://yw1d3y0gt707" path="res://flag.tscn" id="2_1q6wt"]
 [ext_resource type="PackedScene" uid="uid://b6nvxutng2qx5" path="res://player.tscn" id="3_egdub"]
-[ext_resource type="PackedScene" uid="uid://bs04mm0fa6edf" path="res://laser_shooter.tscn" id="5_8rv77"]
+[ext_resource type="PackedScene" uid="uid://bucmbqkxdvbi2" path="res://death.tscn" id="6_pq6s3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7ouhf"]
 texture = ExtResource("1_4d6j2")
@@ -44,5 +44,21 @@ scale = Vector2(0.399999, 0.399999)
 [node name="Flag" parent="." instance=ExtResource("2_1q6wt")]
 position = Vector2(-174, -18)
 
-[node name="laser_shooter" parent="." instance=ExtResource("5_8rv77")]
-position = Vector2(557, 95)
+[node name="Node" type="Node" parent="."]
+
+[node name="death3" parent="Node" instance=ExtResource("6_pq6s3")]
+position = Vector2(-5940, -1599)
+scale = Vector2(1, 38.72)
+
+[node name="death" parent="Node" instance=ExtResource("6_pq6s3")]
+position = Vector2(82, 1379)
+scale = Vector2(85.24, 1)
+
+[node name="death2" parent="Node" instance=ExtResource("6_pq6s3")]
+position = Vector2(6327, -3394)
+rotation = 1.56911
+scale = Vector2(85.24, 1)
+
+[node name="death4" parent="Node" instance=ExtResource("6_pq6s3")]
+position = Vector2(384, -4576)
+scale = Vector2(92.3828, -4.69668)

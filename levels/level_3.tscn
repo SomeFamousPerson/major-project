@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://cwqpg11fd2q24"]
+[gd_scene load_steps=8 format=3 uid="uid://cwqpg11fd2q24"]
 
 [ext_resource type="Texture2D" uid="uid://d3cdu6rhv6lcf" path="res://assets/marble.png" id="1_0xm4l"]
 [ext_resource type="Script" path="res://levels/world.gd" id="1_wn2dw"]
 [ext_resource type="PackedScene" uid="uid://yw1d3y0gt707" path="res://flag.tscn" id="2_nnxi3"]
 [ext_resource type="PackedScene" uid="uid://b6nvxutng2qx5" path="res://player.tscn" id="3_h7wpo"]
+[ext_resource type="PackedScene" uid="uid://cmiy2gt8gn87c" path="res://solid_wall.tscn" id="5_xbtdk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7ouhf"]
 texture = ExtResource("1_0xm4l")
@@ -17,13 +18,16 @@ texture_region_size = Vector2i(14, 14)
 8:10/0 = 0
 8:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 8:10/0/physics_layer_0/angular_velocity = 0.0
+8:0/0 = 0
+8:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+8:0/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSet" id="TileSet_2as2m"]
 tile_size = Vector2i(14, 14)
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_7ouhf")
 
-[node name="Level1" type="Node2D"]
+[node name="Level3" type="Node2D"]
 script = ExtResource("1_wn2dw")
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -42,3 +46,7 @@ scale = Vector2(0.399999, 0.399999)
 
 [node name="Flag" parent="." instance=ExtResource("2_nnxi3")]
 position = Vector2(-174, -18)
+
+[node name="solid wall" parent="." instance=ExtResource("5_xbtdk")]
+position = Vector2(42, 103)
+scale = Vector2(4.17134, 35.4719)

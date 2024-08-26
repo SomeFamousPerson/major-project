@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://dooym0m6wmo5b"]
+[gd_scene load_steps=9 format=3 uid="uid://dooym0m6wmo5b"]
 
 [ext_resource type="Script" path="res://levels/world.gd" id="1_ffec1"]
 [ext_resource type="Texture2D" uid="uid://d3cdu6rhv6lcf" path="res://assets/marble.png" id="1_tqte0"]
 [ext_resource type="PackedScene" uid="uid://b6nvxutng2qx5" path="res://player.tscn" id="2_t3bdi"]
 [ext_resource type="PackedScene" uid="uid://yw1d3y0gt707" path="res://flag.tscn" id="5_5s5ny"]
 [ext_resource type="PackedScene" uid="uid://bucmbqkxdvbi2" path="res://death.tscn" id="5_gt5wd"]
+[ext_resource type="Texture2D" uid="uid://c4cwlatq03io3" path="res://assets/arrow.png" id="6_mt633"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7ouhf"]
 texture = ExtResource("1_tqte0")
@@ -39,7 +40,7 @@ offset_top = 45.0
 offset_right = 915.0
 offset_bottom = 100.0
 theme_override_font_sizes/font_size = 40
-text = "Use A and Dd to walk this way"
+text = "Use A and D to walk this way"
 
 [node name="jump" type="Label" parent="Node"]
 offset_left = 1122.0
@@ -96,40 +97,36 @@ autowrap_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 4865.0
-offset_top = -536.0
-offset_right = 5247.0
-offset_bottom = -351.0
+offset_left = 4828.0
+offset_top = -978.0
+offset_right = 5210.0
+offset_bottom = -793.0
 grow_vertical = 0
 theme_override_font_sizes/font_size = 31
 text = "As you may have worked out, you can only place a tileswapper on or next to a solid tile"
-autowrap_mode = 1
-
-[node name="legal placements2" type="Label" parent="Node"]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 5545.0
-offset_top = -905.0
-offset_right = 5894.0
-offset_bottom = -720.0
-grow_vertical = 0
-theme_override_font_sizes/font_size = 31
-text = "However, you can also build a tileswapper on top of another one, 
-forming a staircase"
 autowrap_mode = 1
 
 [node name="flag" type="Label" parent="Node"]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 6441.0
-offset_top = -887.0
-offset_right = 6790.0
-offset_bottom = -702.0
+offset_left = 6454.0
+offset_top = -1311.0
+offset_right = 6803.0
+offset_bottom = -1126.0
 grow_vertical = 0
 theme_override_font_sizes/font_size = 31
 text = "Touch the flag to finish this level!"
+autowrap_mode = 1
+
+[node name="legal placement 2" type="Label" parent="Node"]
+offset_left = 5509.0
+offset_top = -190.0
+offset_right = 5847.0
+offset_bottom = 11.0
+theme_override_font_sizes/font_size = 31
+text = "However, you can also build a tileswapper    on top of another one,      forming a staircase
+"
 autowrap_mode = 1
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -152,3 +149,8 @@ scale = Vector2(2.04093, 1.84)
 [node name="death2" parent="." instance=ExtResource("5_gt5wd")]
 position = Vector2(2376, 1240)
 scale = Vector2(4.3079, 0.668165)
+
+[node name="Arrow" type="Sprite2D" parent="."]
+position = Vector2(3930, 263)
+rotation = 0.333282
+texture = ExtResource("6_mt633")
