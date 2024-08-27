@@ -10,7 +10,7 @@ func _ready():
 func _on_button_pressed():
 	var level# :String = "res://levels/level_"+str(Global.level+1)+".tscn"
 	if Global.level == 0:
-		Global.swappers_remaining = 2
+		Global.swappers_remaining =5
 		level = "res://levels/level_1.tscn"
 	elif Global.level == 1:
 		level = "res://levels/level_2.tscn"

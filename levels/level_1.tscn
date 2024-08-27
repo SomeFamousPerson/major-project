@@ -29,6 +29,7 @@ sources/1 = SubResource("TileSetAtlasSource_7ouhf")
 script = ExtResource("1_ffec1")
 
 [node name="Player" parent="." instance=ExtResource("2_t3bdi")]
+unique_name_in_owner = true
 position = Vector2(263, 150)
 scale = Vector2(0.399999, 0.399999)
 
