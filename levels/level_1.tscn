@@ -84,13 +84,13 @@ autowrap_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 3718.0
-offset_top = -485.0
-offset_right = 4100.0
-offset_bottom = -347.0
+offset_left = 3724.0
+offset_top = -543.0
+offset_right = 4106.0
+offset_bottom = -405.0
 grow_vertical = 0
 theme_override_font_sizes/font_size = 31
-text = "Press G then place a tile by the arrow"
+text = "Press G to change to        \"remove mode\" then       place a tile by the arrow"
 autowrap_mode = 1
 
 [node name="legal placements" type="Label" parent="Node"]
