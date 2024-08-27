@@ -8,7 +8,6 @@ func _ready():
 	
 	$TileMap.set_layer_enabled(1,false)
 	
-	
 
 
 func _physics_process(delta):
