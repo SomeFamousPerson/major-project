@@ -29,7 +29,7 @@ sources/1 = SubResource("TileSetAtlasSource_7ouhf")
 script = ExtResource("1_ffec1")
 
 [node name="Player" parent="." instance=ExtResource("2_t3bdi")]
-position = Vector2(306, 157)
+position = Vector2(263, 150)
 scale = Vector2(0.399999, 0.399999)
 
 [node name="Node" type="Node" parent="."]
@@ -154,3 +154,7 @@ scale = Vector2(4.3079, 0.668165)
 position = Vector2(3930, 263)
 rotation = 0.333282
 texture = ExtResource("6_mt633")
+
+[node name="death3" parent="." instance=ExtResource("5_gt5wd")]
+position = Vector2(3829, 1890)
+scale = Vector2(94.3755, 0.714538)

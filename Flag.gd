@@ -8,9 +8,13 @@ func _on_body_entered(body):
 	print("flag_touched")
 	Global.level += 1
 	if Global.level == 1:
+		Global.swappers_remaining = 2
 		get_tree().change_scene_to_file("res://levels/level_2.tscn")
+		
 	elif Global.level == 2:
+		Global.swappers_remaining = 2
 		get_tree().change_scene_to_file("res://levels/level_3.tscn")	
+		
 	
 
 
