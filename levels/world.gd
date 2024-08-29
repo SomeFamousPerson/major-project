@@ -47,6 +47,16 @@ func _physics_process(delta):
 				#sets a block in the background so that the game knows something is there
 				tilemap.set_cell(0,cell,1,Vector2(8,10))
 			else:
-				#%Player/Camera2D.offset = Vector2(10,10)
-				pass
+				#screen shake on clikcing empty space
+				%Player/Camera2D.offset = Vector2(5,5)
+				await get_tree().create_timer(0.02).timeout 
+				%Player/Camera2D.offset = Vector2(-10,-10)
+				print("shake")
+		elif atlas != Vector2i(-1,-1) and atlas != Vector2i(8,10):
+			#screen shake on clicking a wall
+			%Player/Camera2D.offset = Vector2(5,5)
+			await get_tree().create_timer(0.02).timeout 
+			%Player/Camera2D.offset = Vector2(-10,-10)
+			print("shake")
+				
 	

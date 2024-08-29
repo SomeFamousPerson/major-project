@@ -14,7 +14,9 @@ func _on_body_entered(body):
 	elif Global.level == 2:
 		Global.swappers_remaining = 2
 		get_tree().change_scene_to_file("res://levels/level_3.tscn")	
-		
+	elif Global.level == 3:
+		Global.swappers_remaining = 2
+		get_tree().change_scene_to_file("res://levels/level_4.tscn")
 	
 
 

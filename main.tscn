@@ -75,10 +75,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -188.0
-offset_right = 20.0
-offset_bottom = -165.0
+offset_left = -149.5
+offset_top = -284.0
+offset_right = 149.5
+offset_bottom = -229.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 40
@@ -92,9 +92,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -479.0
-offset_top = -108.0
+offset_top = -196.0
 offset_right = 479.0
-offset_bottom = 249.0
+offset_bottom = 296.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 30
@@ -104,6 +104,9 @@ Move with A and D, with SPACE to jump
 Click on an empty square to place a tileswapper there
 This will build a bridge of tiles in front of it
 Click again to remove it
+Press G to swap between \"build\" to \"remove\" node
+
+Touch the flag to beat a level
 
 These instructions will be repeated in more depth inside the game"
 horizontal_alignment = 1
