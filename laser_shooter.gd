@@ -25,7 +25,7 @@ func _physics_process(delta):
 			#print(atlas)
 			if atlas != Vector2i(0,4):
 				var new_laser = laser.instantiate()
-				new_laser.position = cell+Vector2i(-10,(i+1)*16)
+				new_laser.position = cell+Vector2i(-10,(i+1)*14)
 				$laserbeams.add_child(new_laser)
 			else:
 				print("no child")
