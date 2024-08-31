@@ -17,16 +17,19 @@ func _physics_process(delta):
 	world =  %TileMap
 	#gets the tilemap grid position of the square the laser shooter is in
 	for i in RANGE-1:
-			cell = Vector2i(position-Vector2((i+1)*14,0))/world.tile_set.tile_size/Vector2i(world.scale)
-#			print(cell)
+			#sets cell to the laser shooters position, plus modifiers that make it scale to the world correctly
+			cell = Vector2i(position)/world.tile_set.tile_size/Vector2i(world.scale)
+			cell += Vector2i(0, i+1)
+			print(cell)
 			var atlas = Vector2i(world.get_cell_atlas_coords(0, cell))
 			#print(atlas)
 			if atlas != Vector2i(0,4):
 				var new_laser = laser.instantiate()
-				new_laser.position = cell+Vector2i(-1,(i+1)*16)
+				new_laser.position = cell+Vector2i(-10,(i+1)*16)
 				$laserbeams.add_child(new_laser)
 			else:
 				print("no child")
+				break
 
 				#var new_node2d = Node2D.new()
 				#add_child(new_node2d)

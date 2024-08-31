@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dooym0m6wmo5b"]
+[gd_scene load_steps=9 format=3 uid="uid://dooym0m6wmo5b"]
 
 [ext_resource type="Script" path="res://levels/world.gd" id="1_ffec1"]
 [ext_resource type="Texture2D" uid="uid://d3cdu6rhv6lcf" path="res://assets/marble.png" id="1_tqte0"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://yw1d3y0gt707" path="res://flag.tscn" id="5_5s5ny"]
 [ext_resource type="PackedScene" uid="uid://bucmbqkxdvbi2" path="res://death.tscn" id="5_gt5wd"]
 [ext_resource type="Texture2D" uid="uid://c4cwlatq03io3" path="res://assets/arrow.png" id="6_mt633"]
-[ext_resource type="PackedScene" uid="uid://bs04mm0fa6edf" path="res://laser_shooter.tscn" id="7_ipk4q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7ouhf"]
 texture = ExtResource("1_tqte0")
@@ -160,6 +159,3 @@ texture = ExtResource("6_mt633")
 [node name="death3" parent="." instance=ExtResource("5_gt5wd")]
 position = Vector2(3829, 1890)
 scale = Vector2(94.3755, 0.714538)
-
-[node name="laser_shooter" parent="." instance=ExtResource("7_ipk4q")]
-position = Vector2(649, 16)
