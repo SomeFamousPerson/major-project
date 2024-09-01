@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://b6nvxutng2qx5"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_m6rm2"]
-[ext_resource type="Texture2D" uid="uid://06a56kiwod1b" path="res://assets/red_circle.png" id="2_61pt4"]
+[ext_resource type="Texture2D" uid="uid://dgqga0jo6x8kg" path="res://assets/player.png" id="2_432am"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_crnn3"]
-radius = 62.514
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rfiao"]
+size = Vector2(102, 102)
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 3
@@ -12,10 +12,11 @@ collision_mask = 3
 script = ExtResource("1_m6rm2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_crnn3")
+shape = SubResource("RectangleShape2D_rfiao")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_61pt4")
+scale = Vector2(3.16, 3.16)
+texture = ExtResource("2_432am")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 unique_name_in_owner = true

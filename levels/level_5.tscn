@@ -1,0 +1,85 @@
+[gd_scene load_steps=11 format=3 uid="uid://b37ak1si7i3xr"]
+
+[ext_resource type="Script" path="res://levels/world.gd" id="1_l3t65"]
+[ext_resource type="Texture2D" uid="uid://d3cdu6rhv6lcf" path="res://assets/marble.png" id="2_oqeoh"]
+[ext_resource type="PackedScene" uid="uid://bucmbqkxdvbi2" path="res://death.tscn" id="3_t183n"]
+[ext_resource type="PackedScene" uid="uid://bfgp2ehwpk4pb" path="res://portal.tscn" id="4_7nmii"]
+[ext_resource type="PackedScene" uid="uid://b6nvxutng2qx5" path="res://player.tscn" id="5_qknrq"]
+[ext_resource type="PackedScene" uid="uid://bs04mm0fa6edf" path="res://laser_shooter.tscn" id="6_hkm2u"]
+[ext_resource type="PackedScene" uid="uid://yw1d3y0gt707" path="res://flag.tscn" id="7_qt53q"]
+[ext_resource type="PackedScene" uid="uid://cmiy2gt8gn87c" path="res://solid_wall.tscn" id="8_dfx7g"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7ouhf"]
+texture = ExtResource("2_oqeoh")
+margins = Vector2i(4, 1)
+separation = Vector2i(0, 1)
+texture_region_size = Vector2i(14, 14)
+0:4/0 = 0
+0:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:4/0/physics_layer_0/angular_velocity = 0.0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7, -7, 7, -7, 7, 7, -7, 7)
+8:10/0 = 0
+8:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+8:10/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSet" id="TileSet_pwlyp"]
+tile_size = Vector2i(14, 14)
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_7ouhf")
+
+[node name="Level 5" type="Node2D"]
+script = ExtResource("1_l3t65")
+
+[node name="TileMap" type="TileMap" parent="."]
+unique_name_in_owner = true
+scale = Vector2(6, 6)
+tile_set = SubResource("TileSet_pwlyp")
+format = 2
+layer_0/name = "world"
+layer_0/tile_data = PackedInt32Array(131076, 1, 4, 131075, 1, 4, 131074, 1, 4, 131073, 1, 4, 131072, 1, 4, 196607, 1, 4, 196606, 1, 4, 196599, 1, 4, -196617, 1, 4, -131081, 1, 4, -65545, 1, 4, -9, 1, 4, 65527, 1, 4, 131063, 1, 4, 196600, 1, 4, 196601, 1, 4, -196611, 1, 4, -196612, 1, 4, -196613, 1, 4, -196614, 1, 4, -196616, 1, 4, -196615, 1, 4, -196610, 1, 4, -196609, 1, 4, -262144, 1, 4, -262143, 1, 4, -262142, 1, 4, -262141, 1, 4, -262140, 1, 4, -262139, 1, 4, -196603, 1, 4, -131067, 1, 4, -65531, 1, 4, 5, 1, 4, 65541, 1, 4, 131077, 1, 4, 131078, 1, 4, 131079, 1, 4, 131080, 1, 4, 131081, 1, 4, 131082, 1, 4, 131083, 1, 4, 131084, 1, 4, 65548, 1, 4, 12, 1, 4, -65524, 1, 4, -131060, 1, 4, -196596, 1, 4, -196597, 1, 4, -196598, 1, 4, -196599, 1, 4, -196600, 1, 4, -196601, 1, 4, -196602, 1, 4, 196605, 1, 4, 196603, 1, 4, 196604, 1, 4, 196602, 1, 4)
+layer_1/name = "original world"
+layer_1/tile_data = PackedInt32Array(196607, 1, 4, 131072, 1, 4, 131073, 1, 4, 131074, 1, 4, 131075, 1, 4, 131076, 1, 4, 196606, 1, 4, 131078, 1, 4, 131079, 1, 4, 131080, 1, 4, 131081, 1, 4, 131082, 1, 4, 131083, 1, 4, 131084, 1, 4, 65548, 1, 4, 12, 1, 4, -65524, 1, 4, -131060, 1, 4, -196596, 1, 4, -196597, 1, 4, -196598, 1, 4, -196599, 1, 4, -196600, 1, 4, -196601, 1, 4, -196602, 1, 4, 196605, 1, 4, 196604, 1, 4, 196603, 1, 4, 196602, 1, 4, 196601, 1, 4, -196615, 1, 4, -196614, 1, 4, -196613, 1, 4, -196612, 1, 4, -196611, 1, 4, -196610, 1, 4, -196609, 1, 4, -262144, 1, 4, -262143, 1, 4, -262142, 1, 4, -262141, 1, 4, -262140, 1, 4, -262139, 1, 4, -196603, 1, 4, -131067, 1, 4, -65531, 1, 4, 5, 1, 4, 65541, 1, 4, 196600, 1, 4, 196599, 1, 4, 131063, 1, 4, 65527, 1, 4, -9, 1, 4, -65545, 1, 4, -131081, 1, 4, -196617, 1, 4, -196616, 1, 4)
+
+[node name="death" parent="." instance=ExtResource("3_t183n")]
+position = Vector2(1532, 2422)
+scale = Vector2(14.56, 1.2)
+
+[node name="death2" parent="." instance=ExtResource("3_t183n")]
+position = Vector2(2342, 1369)
+scale = Vector2(1, -12.92)
+
+[node name="Portal" parent="." instance=ExtResource("4_7nmii")]
+position = Vector2(1822, 253)
+colour = "blue"
+
+[node name="Portal2" parent="." instance=ExtResource("4_7nmii")]
+position = Vector2(-506, 87)
+scale = Vector2(8.67844, 8.67844)
+
+[node name="Player" parent="." instance=ExtResource("5_qknrq")]
+unique_name_in_owner = true
+position = Vector2(197, 70)
+scale = Vector2(0.8, 0.8)
+
+[node name="death3" parent="." instance=ExtResource("3_t183n")]
+position = Vector2(621, 1897)
+scale = Vector2(0.212599, 5.82196)
+
+[node name="laser_shooter" parent="." instance=ExtResource("6_hkm2u")]
+position = Vector2(-464, -209)
+
+[node name="Flag" parent="." instance=ExtResource("7_qt53q")]
+position = Vector2(833, 89)
+
+[node name="solid wall" parent="." instance=ExtResource("8_dfx7g")]
+position = Vector2(461, -1.90735e-06)
+scale = Vector2(4.24949, 25.08)
+
+[node name="laser_shooter2" parent="." instance=ExtResource("6_hkm2u")]
+position = Vector2(-377, -207)
+
+[node name="laser_shooter3" parent="." instance=ExtResource("6_hkm2u")]
+position = Vector2(-293, -209)
+
+[connection signal="partner" from="Portal" to="Portal2" method="_on_portal_partner"]
+[connection signal="partner" from="Portal2" to="Portal" method="_on_portal_2_partner"]

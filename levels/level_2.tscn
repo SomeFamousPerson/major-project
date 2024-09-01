@@ -40,7 +40,7 @@ layer_1/tile_data = PackedInt32Array(262139, 1, 4, 262140, 1, 4, 262141, 1, 4, 2
 [node name="Player" parent="." instance=ExtResource("3_egdub")]
 unique_name_in_owner = true
 position = Vector2(306, 157)
-scale = Vector2(0.399999, 0.399999)
+scale = Vector2(0.8, 0.8)
 
 [node name="Flag" parent="." instance=ExtResource("2_1q6wt")]
 position = Vector2(-174, -18)

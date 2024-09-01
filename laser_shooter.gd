@@ -1,7 +1,7 @@
 extends StaticBody2D
 var world
 var laser = preload("res://laser.tscn")
-var RANGE = 4
+var RANGE = 100
 var cell
 
 func _physics_process(delta):
@@ -20,12 +20,18 @@ func _physics_process(delta):
 			#sets cell to the laser shooters position, plus modifiers that make it scale to the world correctly
 			cell = Vector2i(position)/world.tile_set.tile_size/Vector2i(world.scale)
 			cell += Vector2i(0, i+1)
-			print(cell)
+			# print(cell)
 			var atlas = Vector2i(world.get_cell_atlas_coords(0, cell))
 			#print(atlas)
 			if atlas != Vector2i(0,4):
 				var new_laser = laser.instantiate()
-				new_laser.position = cell+Vector2i(-10,(i+1)*14)
+				print(Global.level)
+				if Global.level == 3:
+					new_laser.position = cell+Vector2i(-46,(i+1)*14)
+				elif Global.level == 4:
+					new_laser.position = cell+Vector2i(4,((i+1)*14)+2)
+				else:
+					new_laser.position = cell+Vector2i(10,(i+1)*14)
 				$laserbeams.add_child(new_laser)
 			else:
 				print("no child")

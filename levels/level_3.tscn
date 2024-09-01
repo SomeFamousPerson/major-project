@@ -45,7 +45,7 @@ layer_1/tile_data = PackedInt32Array(0, 1, 4, 131072, 1, 4, 196608, 1, 4, 262144
 [node name="Player" parent="." instance=ExtResource("3_h7wpo")]
 unique_name_in_owner = true
 position = Vector2(306, 157)
-scale = Vector2(0.399999, 0.399999)
+scale = Vector2(0.8, 0.8)
 
 [node name="Flag" parent="." instance=ExtResource("2_nnxi3")]
 position = Vector2(-174, -18)
@@ -84,8 +84,8 @@ scale = Vector2(6.55904, 6.55904)
 colour = "blue"
 
 [node name="Portal2" parent="." instance=ExtResource("7_pfub5")]
-position = Vector2(669, -536)
-scale = Vector2(5.2373, 5.2373)
+position = Vector2(616, -555)
+scale = Vector2(3.6773, 3.6773)
 
 [node name="Label2" type="Label" parent="."]
 offset_left = 518.0

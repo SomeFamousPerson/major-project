@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://h8dg5vbqf80k"]
+[gd_scene load_steps=3 format=3 uid="uid://h8dg5vbqf80k"]
 
 [ext_resource type="Script" path="res://you died.gd" id="1_7iijd"]
+[ext_resource type="PackedScene" uid="uid://yw1d3y0gt707" path="res://flag.tscn" id="2_33yy1"]
 
 [node name="you died" type="Control"]
 layout_mode = 3
@@ -42,5 +43,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 30
 text = "Restart level"
+
+[node name="Flag" parent="." instance=ExtResource("2_33yy1")]
+position = Vector2(-525, -781)
 
 [connection signal="pressed" from="respawn" to="." method="_on_respawn_pressed"]

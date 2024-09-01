@@ -5,7 +5,6 @@ var tileswapper = preload("res://tile_swapper.tscn")
 	
 func _ready():
 	#Global.swappers_remaining = 2
-	
 	$TileMap.set_layer_enabled(1,false)
 	
 

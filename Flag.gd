@@ -7,17 +7,28 @@ extends Area2D
 func _on_body_entered(body):
 	print("flag_touched")
 	Global.level += 1
-	if Global.level == 1:
+	go_to_level()
+	
+
+func go_to_level():
+	print(Global.level)
+	if Global.level == 0:
+		Global.swappers_remaining = 5
+		get_tree().change_scene_to_file("res://levels/level_1.tscn")
+	elif Global.level == 1:
 		Global.swappers_remaining = 2
 		get_tree().change_scene_to_file("res://levels/level_2.tscn")
-		
 	elif Global.level == 2:
 		Global.swappers_remaining = 2
 		get_tree().change_scene_to_file("res://levels/level_3.tscn")	
 	elif Global.level == 3:
 		Global.swappers_remaining = 2
 		get_tree().change_scene_to_file("res://levels/level_4.tscn")
-	
+	#elif Global.level == 4:
+		#Global.swappers_remaining = 3
+		#get_tree().change_scene_to_file("res://levels/level_5.tscn")
+	else:
+		get_tree().change_scene_to_file("res://levels/you_win.tscn")
 
 
 
@@ -39,3 +50,5 @@ func _on_body_entered(body):
 	#print(nextlevel)
 	##sets the scene to nextlevel (which was mmodified to have the name of the next level)
 	#get_tree().change_scene_to_file(nextlevel)
+
+

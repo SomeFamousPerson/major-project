@@ -31,7 +31,7 @@ script = ExtResource("1_ffec1")
 [node name="Player" parent="." instance=ExtResource("2_t3bdi")]
 unique_name_in_owner = true
 position = Vector2(263, 150)
-scale = Vector2(0.399999, 0.399999)
+scale = Vector2(0.8, 0.8)
 
 [node name="Node" type="Node" parent="."]
 
@@ -129,6 +129,19 @@ theme_override_font_sizes/font_size = 31
 text = "However, you can also build a tileswapper    on top of another one,      forming a staircase
 "
 autowrap_mode = 1
+
+[node name="directions" type="Label" parent="Node"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 4226.0
+offset_top = -980.0
+offset_right = 4608.0
+offset_bottom = -654.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 25
+text = "If you haven't realised yet, the tileswapper spawns facing the same direction that you were. To change it's direction, try turning around before placing it"
+autowrap_mode = 2
 
 [node name="TileMap" type="TileMap" parent="."]
 unique_name_in_owner = true
